@@ -1,13 +1,10 @@
-package Bryar::Config::YAML;
+use strict;
+use warnings;
 
+package Bryar::Config::YAML;
 use base qw(Bryar::Config);
 
-use strict;
-use warnings;
 use YAML qw(LoadFile);
-
-use warnings;
-use strict;
 
 =head1 NAME
 
@@ -15,13 +12,13 @@ Bryar::Config::YAML - Bryar configuration stored in YAML
 
 =head1 VERSION
 
-version 0.10
+version 0.101
 
- $Id: YAML.pm,v 1.1.1.1 2004/10/23 01:44:22 rjbs Exp $
+ $Id$
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.101';
 
 =head1 SYNOPSIS
 
@@ -47,20 +44,23 @@ hash.
 =cut
 
 sub load {
-    my ($self, $file) = @_;
-    my %args;
-    my $datadir = $self->{datadir};
-    if (!-r $file) {
-        if (-r "$datadir/$file") { $file = "$datadir/$file"; }
-        else                     { return () }
+  my ($self, $file) = @_;
+  my %args;
+  my $datadir = $self->{datadir};
+  if (!-r $file) {
+    if (-r "$datadir/$file") {
+      $file = "$datadir/$file";
+    } else {
+      return;
     }
-	%args = %{ (LoadFile($file))[0] };
-    return %args;
+  }
+  %args = %{ (LoadFile($file))[0] };
+  return %args;
 }
 
 =head1 AUTHOR
 
-Ricardo Signes, C<< <rjbs@cpan.org> >>
+Ricardo SIGNES, C<< <rjbs@cpan.org> >>
 
 =head1 BUGS
 
@@ -71,7 +71,7 @@ notified of progress on your bug as I make changes.
 
 =head1 COPYRIGHT
 
-Copyright 2004 Ricardo Signes, All Rights Reserved.
+Copyright 2004-2006 Ricardo SIGNES, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
