@@ -4,7 +4,7 @@ use warnings;
 package Bryar::Config::YAML;
 use base qw(Bryar::Config);
 
-use YAML qw(LoadFile);
+use YAML::Syck qw(LoadFile);
 
 =head1 NAME
 
@@ -12,13 +12,11 @@ Bryar::Config::YAML - Bryar configuration stored in YAML
 
 =head1 VERSION
 
-version 0.101
-
- $Id$
+version 0.102
 
 =cut
 
-our $VERSION = '0.101';
+our $VERSION = '0.102';
 
 =head1 SYNOPSIS
 

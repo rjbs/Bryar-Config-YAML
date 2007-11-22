@@ -11,6 +11,7 @@ WriteMakefile(
 	PL_FILES            => {},
 	PREREQ_PM => {
 		'Bryar'      => '2.8_01',
+    'YAML::Syck' => 0, # min ver unknown
 		'Test::More' => 0,
 	},
 	dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
