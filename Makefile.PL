@@ -14,6 +14,14 @@ WriteMakefile(
     'YAML::Syck' => 0, # min ver unknown
 		'Test::More' => 0,
 	},
+  (eval { ExtUtils::MakeMaker->VERSION(6.46) }
+    ? (META_MERGE => {
+        resources => {
+          Repository => 'http://github.com/rjbs/bryar-config-yaml'
+        }
+      })
+    : ()
+  ),
 	dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
 	clean               => { FILES => 'Bryar-Config-YAML-* cover_db' },
 );
