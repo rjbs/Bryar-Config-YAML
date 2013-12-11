@@ -12,11 +12,11 @@ Bryar::Config::YAML - Bryar configuration stored in YAML
 
 =head1 VERSION
 
-version 0.103
+version 0.104
 
 =cut
 
-our $VERSION = '0.103';
+our $VERSION = '0.104';
 
 =head1 SYNOPSIS
 
@@ -24,6 +24,9 @@ our $VERSION = '0.103';
  Bryar::Config::YAML->load(...);
 
 =head1 DESCRIPTION
+
+B<Achtung!>  This module is no longer maintained.  If you would like to take it
+over, contact RJBS.
 
 This encapsulates a Bryar configuration. It can be used to load a new
 configuration from a file, or provide a reasonable set of defaults.
@@ -59,13 +62,6 @@ sub load {
 =head1 AUTHOR
 
 Ricardo SIGNES, C<< <rjbs@cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to
-C<bug-bryar-config-yaml@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org>.  I will be notified, and then you'll automatically be
-notified of progress on your bug as I make changes.
 
 =head1 COPYRIGHT
 
